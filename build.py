@@ -2,10 +2,12 @@
 from pathlib import Path
 from html import escape as e
 from urllib.parse import quote
+import re
 from media import media_sections
 
 ROOT = Path(__file__).resolve().parent
-ORIGIN = 'https://hari.klaviyo.expert'
+BASE_PATH = '/Expert-Klaviyo'
+ORIGIN = 'https://rasoanaivo-prog.github.io' + BASE_PATH
 PHONE = '261388050781'
 ARROW = '<span class="arrow" aria-hidden="true">↗</span>'
 
@@ -152,7 +154,7 @@ TRANSCRIPTS = {
  ]
 }
 
-def page(lang):
+def _page(lang):
  c = CONTENT[lang]
  base = '/' if lang == 'fr' else '/en/'
  wa = 'https://wa.me/' + PHONE + '?text=' + quote(c['wa'])
@@ -201,6 +203,11 @@ def page(lang):
 </main><footer class="footer wrap"><div class="footer-top"><a class="brand" href="#top" aria-label="{c['home']}">HARI<span> /</span></a><p>{c['footerLine']}</p></div><div class="footer-bottom"><span>{c['footerCopyright']}</span><a href="#top">{c['back']} ↑</a></div></footer>
 <dialog class="proof-dialog" id="proof-dialog" aria-labelledby="dialog-label"><div class="dialog-header"><p id="dialog-label">{c['demo']}</p><button class="dialog-close" autofocus>{c['close']} ×</button></div><div class="dialog-body"><img alt=""><div class="transcript"></div></div></dialog>{templates}
 </body></html>'''
+
+def page(lang):
+ # Keep local links inside the GitHub Pages project on both language pages.
+ return re.sub(r'''(\b(?:href|src|data-proof)=["'])/(?!/)''',
+               lambda match: match.group(1) + BASE_PATH + '/', _page(lang))
 
 if __name__ == '__main__':
  for lang in ('fr','en'):
