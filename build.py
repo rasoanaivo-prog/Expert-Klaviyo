@@ -16,21 +16,21 @@ CONTENT = {
   'title': 'Hari — Plus de ventes grâce à votre email marketing',
   'description': 'Votre trafic mérite de convertir. Hari, expert Klaviyo indépendant, accompagne les boutiques Shopify : emails, fidélisation et optimisation continue.',
   'skip': 'Aller au contenu', 'home': 'Accueil Hari', 'nav': ['Votre croissance', 'À propos', 'La méthode', 'Accompagnement'],
-  'navcta': 'Parlons croissance', 'menulabel': 'Ouvrir ou fermer le menu', 'audit': 'Demander mon diagnostic',
-  'wa': 'Bonjour Hari, je souhaite un diagnostic de mon email marketing. Voici le lien de ma boutique : ',
+  'navcta': 'Audit gratuit · 30 min', 'menulabel': 'Ouvrir ou fermer le menu', 'audit': 'Réserver mon audit gratuit',
+  'wa': 'Bonjour Hari, je souhaite réserver mon audit Klaviyo gratuit de 30 minutes. Voici le lien de ma boutique : ',
   'eyebrow': 'Expert Klaviyo indépendant · Shopify',
   'hero': '<span>Votre trafic.</span><span>Plus de <em>ventes.</em></span>',
-  'intro': 'Vous attirez les visiteurs. Je crée les emails qui les aident à passer commande, puis leur donnent envie de revenir.',
-  'note': 'Un premier diagnostic gratuit. Directement avec moi.',
+  'intro': 'Vous attirez les visiteurs. Je crée les flows et les campagnes email qui les aident à passer commande, puis leur donnent envie de revenir.',
+  'note': '30 minutes offertes pour identifier vos priorités. Directement avec moi, sans engagement.',
   'role': 'Votre expert email marketing', 'portrait': 'Portrait professionnel de Hari',
   'bottom': ['Basé à Madagascar · Clients à l’international', 'Stratégie. Création. Optimisation.'],
   'band': ['Convertir le trafic', 'Faire revenir les clients', 'Construire la croissance'],
   'impactTag': '01 / Votre croissance', 'impactTitle': 'Le prochain achat<br>se prépare <span class="lime">maintenant.</span>',
   'impactIntro': 'Un visiteur qui hésite. Un panier oublié. Un client qui ne revient pas. À chaque étape, un email peut faire avancer la relation.',
   'services': [
-   ['Transformer l’intérêt<br><span class="soft">en première commande.</span>', 'Je construis un accueil qui donne envie de découvrir votre marque, rassure et accompagne vers le premier achat.', 'Inscription newsletter · Emails de bienvenue'],
-   ['Récupérer les ventes<br><span class="soft">qui vous échappent.</span>', 'Je relance au bon moment, avec le bon message, les visiteurs qui ont laissé un produit dans leur panier ou interrompu leur commande.', 'Abandon de panier · Abandon de paiement, traités séparément'],
-   ['Donner envie<br><span class="soft">de revenir.</span>', 'Je crée une suite à la première commande : conseils utiles, produits pertinents et campagnes qui entretiennent le lien avec votre marque.', 'Après-achat · Fidélisation · Campagnes ciblées']
+   ['Transformer l’intérêt<br><span class="soft">en première commande.</span>', 'Je construis un accueil qui donne envie de découvrir votre marque, rassure et accompagne vers le premier achat.', 'Pop-up newsletter · Welcome flow'],
+   ['Récupérer les ventes<br><span class="soft">qui vous échappent.</span>', 'Je relance au bon moment, avec le bon message, les visiteurs qui ont laissé un produit dans leur panier ou interrompu leur commande.', 'Abandoned Cart · Abandoned Checkout : deux flows distincts'],
+   ['Donner envie<br><span class="soft">de revenir.</span>', 'Je crée une suite à la première commande : conseils utiles, produits pertinents et campagnes qui entretiennent le lien avec votre marque.', 'Post-purchase flows · Rétention · Campagnes email ciblées']
   ],
   'aboutTag': '02 / Derrière les emails', 'aboutTitle': 'Hari.<br>À vos côtés.<br><span>À fond.</span>',
   'aboutLead': 'Je suis Harifetra. Vous pouvez m’appeler Hari.',
@@ -42,24 +42,24 @@ CONTENT = {
   'methodIntro': 'Vous savez ce que nous faisons, pourquoi nous le faisons et ce que nous allons mesurer.',
   'steps': [
    ['Comprendre', 'J’étudie votre parcours d’achat et vos emails pour identifier les opportunités prioritaires.'],
-   ['Construire', 'Je prépare la stratégie, les textes et le design, puis configure les séquences adaptées à votre boutique.'],
+   ['Construire', 'Je prépare la stratégie, les textes et le design, puis configure vos flows et prépare vos campagnes marketing.'],
    ['Lancer', 'Nous validons les emails. Je vérifie les parcours et les liens avant la mise en route.'],
    ['Optimiser', 'Pour le suivi continu, j’analyse les achats, les clics et la délivrabilité afin d’ajuster la suite.']
   ],
   'offersTag': '05 / Accompagnement', 'offersTitle': 'Le bon départ.<br>La bonne suite.',
   'offersIntro': 'Nous choisissons le périmètre selon votre situation, vos priorités et votre rythme de croissance.',
   'offers': [
-   ['Starter', 'Poser les bases', 'Mission ponctuelle', 'Pour commencer par vos priorités email et avancer sur une première étape bien définie.', ['Un objectif prioritaire', 'Un périmètre ciblé', 'Une base pour la suite']],
-   ['Growth', 'Construire l’ensemble', 'Mise en place complète', 'Pour donner une vraie structure à votre email marketing, du premier contact à l’après-achat.', ['Une stratégie cohérente', 'Des séquences adaptées', 'Des emails à votre image']],
-   ['Scale', 'Garder le rythme', 'Mise en place + suivi', 'Pour construire, suivre et faire évoluer votre email marketing avec un expert à vos côtés.', ['La base Growth', 'Un suivi dans la durée', 'Des optimisations régulières']]
+   ['Starter', 'Poser les bases', 'Mission ponctuelle', 'Pour commencer par vos priorités email et avancer sur une première étape bien définie.', ['Un flow prioritaire ou une campagne ciblée', 'Copywriting, design et configuration', 'Un périmètre défini selon votre objectif']],
+   ['Growth', 'Construire l’ensemble', 'Mise en place complète', 'Pour donner une vraie structure à votre email marketing, du premier contact à l’après-achat.', ['Stratégie CRM et flows essentiels', 'Stratégie de campagnes et calendrier marketing', 'Copywriting, design et configuration des emails']],
+   ['Scale', 'Garder le rythme', 'Mise en place + suivi', 'Pour construire, suivre et faire évoluer votre email marketing avec un expert à vos côtés.', ['La base Growth et des campagnes régulières', 'Segmentation, création et envoi des campagnes', 'Suivi des performances et optimisation des flows']]
   ],
-  'offerCta': 'Parlons de votre besoin', 'offerNote': 'Les livrables, le calendrier et le tarif sont précisés dans votre proposition après le diagnostic.',
+  'offerCta': 'Parlons de votre besoin', 'offerNote': 'Le nombre de flows, d’emails et de campagnes, la fréquence des envois, les délais et le tarif sont précisés dans votre proposition après l’audit gratuit.',
   'examplesTag': '06 / Témoignages clients', 'examplesTitle': 'La performance<br>se suit <span class="lime">ensemble.</span>',
-  'examplesIntro': 'Les retours de mes clients sur les commandes, les séquences automatiques et la qualité des envois.',
+  'examplesIntro': 'Les retours de mes clients sur les commandes, les flows et la qualité des envois.',
   'disclaimer': 'Retours clients partagés par Hari.',
   'demo': 'Témoignage client · WhatsApp', 'zoom': 'Agrandir le témoignage', 'close': 'Fermer', 'transcript': 'Transcription de l’échange',
   'examples': [
-   ['Des emails qui accompagnent la vente', 'Un retour sur les séquences de bienvenue et d’abandon de panier.', '2.jpg'],
+   ['Des emails qui accompagnent la vente', 'Un retour sur les flows Welcome et Abandoned Cart.', '2.jpg'],
    ['Un regard sur les commandes', 'Un échange autour du suivi des ventes au quotidien.', '3.jpg'],
    ['Des ajustements qui comptent', 'Un point sur la segmentation, la délivrabilité et les automatisations.', '1.jpg']
   ],
@@ -68,30 +68,31 @@ CONTENT = {
   'faqs': [
    ['Je n’ai encore rien mis en place. On peut démarrer ?', 'Oui. Nous partons de votre boutique et de vos objectifs pour définir les premières actions utiles. Je peux prendre en charge la mise en place de Klaviyo et des emails qui accompagnent votre parcours client.'],
    ['Klaviyo est déjà installé. Pouvez-vous reprendre l’existant ?', 'Oui. Je commence par examiner ce qui existe, ce qui fonctionne et ce qui mérite d’être corrigé. Nous priorisons ensuite les améliorations en fonction de votre situation.'],
-   ['Que comprend le premier diagnostic gratuit ?', 'Un premier regard sur votre boutique et votre parcours email, puis un échange sur les principales pistes à explorer. Si une analyse approfondie du compte est nécessaire, son périmètre est défini séparément.'],
+   ['Que comprend l’audit gratuit de 30 minutes ?', 'Nous échangeons pendant 30 minutes sur votre boutique, vos flows, vos campagnes et votre délivrabilité pour identifier les priorités et les prochaines actions. Cet audit est gratuit et sans engagement. Une analyse approfondie du compte fait l’objet d’un périmètre séparé.'],
    ['Vous vous occupez aussi des textes et du design ?', 'Oui. Je travaille la stratégie, les textes, le design et la configuration. Les livrables exacts et les validations nécessaires sont précisés dans la proposition.'],
+   ['Gérez-vous aussi les campagnes marketing ?', 'Oui. Je prends en charge la stratégie, le calendrier marketing, la segmentation, le copywriting, le design et les envois. Starter peut couvrir une campagne ciblée, Growth prépare la stratégie et Scale inclut la gestion régulière des campagnes. Le volume est défini ensemble dans la proposition.'],
    ['Quels résultats peut-on attendre ?', 'L’objectif est de mieux convertir et fidéliser. Les résultats dépendent notamment du trafic, de l’offre, de la base clients et de la situation de départ. Nous suivons les ventes attribuées, les clics et la qualité des envois, sans promettre un pourcentage universel.']
   ],
   'contactTag': 'La suite commence ici', 'contactTitle': 'Et si votre<br>prochaine vente<br>était <em>déjà là ?</em>',
-  'contactText': 'Envoyez-moi le lien de votre boutique. Regardons ensemble ce que votre email marketing pourrait mieux faire.',
-  'contactCta': 'Parlons-en sur WhatsApp', 'footerLine': 'Expert indépendant.<br>Email marketing pour Shopify.', 'footerCopyright': '© 2026 Hari · Harifetra', 'back': 'Retour en haut'
+  'contactText': 'Réservez votre audit gratuit de 30 minutes. Nous faisons le point sur vos flows et vos campagnes pour identifier vos prochaines opportunités de croissance.',
+  'contactCta': 'Réserver mes 30 minutes gratuites', 'footerLine': 'Expert indépendant.<br>Email marketing pour Shopify.', 'footerCopyright': '© 2026 Hari · Harifetra', 'back': 'Retour en haut'
  },
  'en': {
   'title': 'Hari — Turn more of your traffic into sales',
   'description': 'Your traffic deserves to convert. Hari is an independent Klaviyo expert helping Shopify brands with email marketing, retention and ongoing optimisation.',
   'skip': 'Skip to content', 'home': 'Hari home', 'nav': ['Your growth', 'About me', 'The approach', 'Work with me'],
-  'navcta': 'Let’s talk growth', 'menulabel': 'Open or close the menu', 'audit': 'Get my email review',
-  'wa': 'Hi Hari, I would like an initial review of my email marketing. Here is my store link: ',
+  'navcta': 'Free audit · 30 min', 'menulabel': 'Open or close the menu', 'audit': 'Book my free audit',
+  'wa': 'Hi Hari, I would like to book a free 30-minute Klaviyo audit. Here is my store link: ',
   'eyebrow': 'Independent Klaviyo expert · Shopify',
   'hero': '<span>Your traffic.</span><span>More <em>sales.</em></span>',
-  'intro': 'You bring the visitors. I create the emails that help them place an order, then give them a reason to come back.',
-  'note': 'A free initial review. Directly with me.', 'role': 'Your email marketing expert', 'portrait': 'Professional portrait of Hari',
+  'intro': 'You bring the visitors. I create the flows and email campaigns that help them place an order, then give them a reason to come back.',
+  'note': '30 minutes to identify your priorities. Directly with me, with no obligation.', 'role': 'Your email marketing expert', 'portrait': 'Professional portrait of Hari',
   'bottom': ['Based in Madagascar · Working worldwide', 'Strategy. Creative. Optimisation.'],
   'band': ['Convert your traffic', 'Bring customers back', 'Build your growth'],
   'impactTag': '01 / Your growth', 'impactTitle': 'The next purchase<br>starts <span class="lime">right here.</span>',
   'impactIntro': 'A visitor on the fence. A forgotten cart. A customer who hasn’t returned. At every stage, an email can move the relationship forward.',
   'services': [
-   ['Turn interest<br><span class="soft">into a first order.</span>', 'I build a welcome experience that introduces your brand, builds confidence and helps subscribers make their first purchase.', 'Newsletter signup · Welcome emails'],
+   ['Turn interest<br><span class="soft">into a first order.</span>', 'I build a welcome experience that introduces your brand, builds confidence and helps subscribers make their first purchase.', 'Newsletter pop-up · Welcome flow'],
    ['Win back sales<br><span class="soft">that slip away.</span>', 'I follow up with the right message at the right time when visitors leave products in their cart or stop before completing checkout.', 'Abandoned cart · Abandoned checkout, handled separately'],
    ['Give customers<br><span class="soft">a reason to return.</span>', 'I build on that first order with helpful advice, relevant products and campaigns that keep customers connected to your brand.', 'Post-purchase · Retention · Targeted campaigns']
   ],
@@ -105,18 +106,18 @@ CONTENT = {
   'methodIntro': 'You know what we’re doing, why we’re doing it and what we’ll be measuring.',
   'steps': [
    ['Understand', 'I review your buying journey and emails to identify the most useful opportunities.'],
-   ['Build', 'I develop the strategy, copy and design, then set up sequences that fit your store.'],
+   ['Build', 'I develop the strategy, copy and design, then set up your flows and prepare your marketing campaigns.'],
    ['Launch', 'We approve the emails together. I check the customer journeys and links before going live.'],
    ['Improve', 'With ongoing support, I review purchases, clicks and deliverability to guide the next changes.']
   ],
   'offersTag': '05 / Work with me', 'offersTitle': 'Start strong.<br>Keep moving.',
   'offersIntro': 'We choose the right scope for where your store is today, your priorities and your pace of growth.',
   'offers': [
-   ['Starter', 'Lay the foundations', 'One-time project', 'Focus on your email priorities and move forward with a clearly defined first step.', ['One priority goal', 'A focused scope', 'A foundation to build on']],
-   ['Growth', 'Build the whole picture', 'Complete setup', 'Give your email marketing a clear structure, from first contact to the post-purchase experience.', ['A coherent strategy', 'Sequences for your store', 'Emails that feel like your brand']],
-   ['Scale', 'Keep the momentum', 'Setup + ongoing support', 'Build, track and improve your email marketing with a dedicated expert by your side.', ['The Growth foundation', 'Ongoing support', 'Regular optimisation']]
+   ['Starter', 'Lay the foundations', 'One-time project', 'Focus on your email priorities and move forward with a clearly defined first step.', ['One priority flow or a targeted campaign', 'Copy, design and setup', 'A scope built around your goal']],
+   ['Growth', 'Build the whole picture', 'Complete setup', 'Give your email marketing a clear structure, from first contact to the post-purchase experience.', ['CRM strategy and core flows', 'Campaign strategy and marketing calendar', 'Email copy, design and setup']],
+   ['Scale', 'Keep the momentum', 'Setup + ongoing support', 'Build, track and improve your email marketing with a dedicated expert by your side.', ['The Growth foundation and ongoing campaigns', 'Campaign segmentation, creation and sending', 'Performance tracking and flow optimization']]
   ],
-  'offerCta': 'Let’s discuss your needs', 'offerNote': 'Deliverables, timing and pricing are set out in your proposal after the initial review.',
+  'offerCta': 'Let’s discuss your needs', 'offerNote': 'The number of flows, emails and campaigns, sending frequency, timeline and pricing are detailed in your proposal after the free audit.',
   'examplesTag': '06 / Client testimonials', 'examplesTitle': 'Track progress.<br><span class="lime">Stay connected.</span>',
   'examplesIntro': 'Client feedback on orders, automated email sequences and sending quality.',
   'disclaimer': 'Client feedback shared by Hari.',
@@ -131,13 +132,14 @@ CONTENT = {
   'faqs': [
    ['I haven’t set anything up yet. Can we start from scratch?', 'Yes. We start with your store and your goals to work out the most useful first steps. I can set up Klaviyo and the emails that support your customer journey.'],
    ['Klaviyo is already installed. Can you improve what’s there?', 'Yes. I begin by reviewing what exists, what works and what needs attention. We then prioritise improvements based on your situation.'],
-   ['What does the free initial review include?', 'An initial look at your store and email journey, followed by a conversation about the main opportunities. If an in-depth account audit is needed, we define that scope separately.'],
+   ['What does the free 30-minute audit include?', 'We spend 30 minutes discussing your store, flows, campaigns and deliverability to identify priorities and practical next steps. The audit is free, with no obligation. An in-depth account review is scoped separately.'],
    ['Do you also handle copy and design?', 'Yes. I work on strategy, copy, design and setup. Your proposal specifies the exact deliverables and the approvals needed.'],
+   ['Do you also manage marketing campaigns?', 'Yes. I handle strategy, the marketing calendar, segmentation, copy, design and sending. Starter can cover a targeted campaign, Growth establishes the strategy, and Scale includes ongoing campaign management. We agree on the volume in your proposal.'],
    ['What results can I expect?', 'The goal is to improve conversion and retention. Results depend on your traffic, offer, customer base and starting point. We track attributed sales, clicks and sending quality, without promising a universal percentage.']
   ],
   'contactTag': 'Your next step starts here', 'contactTitle': 'What if your<br>next sale was<br><em>already here?</em>',
-  'contactText': 'Send me your store link. Let’s look at what your email marketing could be doing better.',
-  'contactCta': 'Let’s talk on WhatsApp', 'footerLine': 'Independent expert.<br>Email marketing for Shopify.', 'footerCopyright': '© 2026 Hari · Harifetra', 'back': 'Back to top'
+  'contactText': 'Book your free 30-minute audit. We’ll review your flows and campaigns to identify your next growth opportunities.',
+  'contactCta': 'Book my free 30 minutes', 'footerLine': 'Independent expert.<br>Email marketing for Shopify.', 'footerCopyright': '© 2026 Hari · Harifetra', 'back': 'Back to top'
  }
 }
 
