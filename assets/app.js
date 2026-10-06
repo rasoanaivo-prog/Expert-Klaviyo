@@ -29,7 +29,7 @@
     dialog.classList.toggle('media-wide', button.dataset.view === 'wide');
     dialog.classList.toggle('media-design', button.dataset.view === 'design');
     dialogImage.src = button.dataset.proof;
-    dialogImage.alt = button.querySelector('img').alt;
+    dialogImage.alt = button.dataset.proofAlt || button.querySelector('img')?.alt || dialogLabel.textContent;
     transcript.replaceChildren(document.querySelector(button.dataset.transcript).content.cloneNode(true));
     dialog.showModal();
     dialog.scrollTop = 0;

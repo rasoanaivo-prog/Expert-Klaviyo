@@ -16,14 +16,14 @@ COPY = {'fr': {'designTitle': 'Des emails<br>qui <span class="lime">donnent envi
                      'Des univers mode, beauté, maison et lifestyle.',
                      'design-lifestyle.jpeg',
                      1472)],
-        'designTag': '04 / Designs d’emails',
+        'designTag': '03 / Designs d’emails',
         'reference': 'Modèle d’email marketing',
         'enlarge': 'Agrandir le visuel'},
  'en': {'designTitle': 'Emails that<br><span class="lime">make an impression.</span>',
         'designIntro': 'From the first glance to the click: clear messaging, products in the spotlight and a '
                        'look that stays true to the brand.',
-        'designs': [('Colour & product',
-                     'A selection of colourful compositions and product presentations.',
+        'designs': [('Color & product',
+                     'A selection of colorful compositions and product presentations.',
                      'design-cpg.jpeg',
                      1472),
                     ('Key moments & campaigns',
@@ -34,7 +34,7 @@ COPY = {'fr': {'designTitle': 'Des emails<br>qui <span class="lime">donnent envi
                      'Fashion, beauty, home and lifestyle designs.',
                      'design-lifestyle.jpeg',
                      1472)],
-        'designTag': '04 / Email designs',
+        'designTag': '03 / Email designs',
         'reference': 'Marketing email design',
         'enlarge': 'Enlarge the image'}}
 
