@@ -1,0 +1,51 @@
+.offers-v2 .section-head{align-items:center;gap:3rem;margin-bottom:2rem}
+.offers-v2 .section-head h2{max-width:45rem;font-size:clamp(2.15rem,3.8vw,4rem)}
+.offers-v2 .section-head>p{max-width:26rem}
+.plans-common{font-size:1rem;color:#4b5342;margin-bottom:2rem;max-width:none}
+.plans-grid{display:grid;grid-template-columns:1fr 1.08fr 1fr;grid-template-areas:'starter growth scale';gap:1.25rem;align-items:stretch}
+.plan-card{display:flex;flex-direction:column;padding:1.8rem;border:1px solid #c4cabc;background:#fbfcf9;color:var(--ink);min-width:0}
+.plan-starter{grid-area:starter}.plan-growth{grid-area:growth}.plan-scale{grid-area:scale}
+.plan-card.plan-featured{background:var(--lime);border:2px solid var(--ink);box-shadow:0 8px 0 var(--ink)}
+.plan-label{display:flex;flex-direction:column;align-items:flex-start;gap:.65rem;min-height:4rem;font-size:.875rem;color:#48503e;line-height:1.4}
+.plan-badge{display:inline-block;background:var(--ink);color:var(--lime);padding:.35rem .65rem;font-size:.875rem;font-weight:600}
+.plan-card h3{font-size:clamp(2rem,2.6vw,2.9rem);letter-spacing:-.045em;margin:1.1rem 0 .9rem}
+.plan-benefit{font-size:1.0625rem;line-height:1.45;font-weight:700;min-height:3.1rem}
+.plan-description{font-size:1rem;line-height:1.6;color:#48503e;margin-top:.85rem;min-height:8rem}
+.plan-pricing{margin:1.75rem 0 1.3rem;min-height:6rem}
+.plan-price{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap;font-size:1rem;line-height:1.4;color:var(--ink)}
+.plan-price strong{font-family:var(--display);font-size:clamp(2rem,3vw,2.8rem);font-weight:600;letter-spacing:-.06em;white-space:nowrap}
+.plan-price span{font-size:.9375rem;color:#46503b}
+.plan-setup{font-size:.9375rem;line-height:1.6;margin-top:.55rem;color:#46503b}
+.plan-setup strong{white-space:nowrap}
+.plan-features{padding:0;margin:0 0 2rem;list-style:none}
+.plan-features li{padding:.75rem 0;border-bottom:1px solid #bdc5ae;font-size:.9375rem;line-height:1.5}
+.plan-featured .plan-features li{border-color:#9fb93d}
+.plan-featured .plan-features li:nth-child(2){font-weight:700}
+.plan-actions{margin-top:auto;display:flex;flex-direction:column;gap:1rem}
+.plan-button{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;min-height:3.5rem;padding:.8rem 1rem;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:1rem;font-weight:600;line-height:1.45;cursor:pointer;transition:background .15s,color .15s}
+.plan-button:hover{background:#e6e9df}.plan-button-primary{background:var(--ink);color:var(--paper)}.plan-button-primary:hover{background:#30362a;color:white}
+.plan-upgrade{padding:.2rem 0;border:0;background:none;font-size:.875rem;line-height:1.5;color:#455038;text-align:center;text-decoration:underline;text-underline-offset:3px;min-height:2.75rem}
+.plans-notes{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.3rem}
+.plans-notes p{font-size:.875rem;color:#4f5945}
+.offer-dialog{width:min(94vw,780px);max-height:92dvh;padding:0;border:1px solid #566148;background:var(--paper);color:var(--ink);overscroll-behavior:contain;scrollbar-gutter:stable;box-shadow:0 20px 100px #0006}
+.offer-dialog::backdrop{background:#10140fe6;backdrop-filter:blur(4px)}
+.offer-dialog-header{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.5rem;background:var(--ink);color:var(--lime)}
+.offer-dialog-header>span{font-size:.875rem;font-weight:600}
+.offer-dialog-close{flex:none;display:flex;align-items:center;gap:.7rem;padding:.55rem .9rem;border:1px solid #869374;background:transparent;color:var(--paper);font-size:.875rem;min-height:2.75rem}
+.offer-dialog-close:hover{background:#30362a}.offer-dialog-close span{font-size:1.3rem;line-height:1}
+.offer-dialog-body{padding:2rem 2.5rem}.plan-detail-kicker{font-size:.875rem;text-transform:uppercase;letter-spacing:.06em;color:#536045}
+.plan-detail-intro h2{font-size:clamp(2rem,5vw,3.5rem);margin:.75rem 0 1rem}
+.plan-detail-intro>p:not(.plan-detail-kicker){color:#48503e;font-size:1rem}
+.plan-detail-intro .plan-pricing{background:var(--lime);padding:1.1rem 1.4rem;min-height:0;margin-bottom:0}
+.plan-detail-section{margin-top:2rem;padding-top:1.75rem;border-top:1px solid #c4cabc}
+.plan-detail-section h3,.plan-next h3{font-size:1.3rem;line-height:1.3;letter-spacing:-.025em;margin-bottom:1rem}
+.plan-detail-section ul{padding-left:1.25rem;margin:0}.plan-detail-section li{font-size:1rem;line-height:1.6;margin:.5rem 0}
+.plan-detail-section>p{font-size:.9375rem;color:#48503e;margin-top:1rem}
+.plan-detail-section .plan-campaign-cadence{font-weight:600;font-size:1rem;color:var(--ink);margin-bottom:1rem}
+.plan-flow-list{display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem}
+.plan-next{margin-top:2rem;padding:1.5rem;background:#e5e9dd}.plan-next p{font-size:1rem;color:#48503e;margin-bottom:1.3rem}
+.plan-audit-link{display:block;margin-top:1rem;font-size:.9375rem;text-align:center;text-decoration:underline;text-underline-offset:3px;padding:.35rem}
+body.offer-dialog-open{overflow:hidden}
+@media(max-width:1100px){.plan-card{padding:1.35rem}.plans-grid{gap:.8rem}.plan-benefit{min-height:4.6rem}.plan-description{min-height:9.5rem}}
+@media(max-width:950px){.plans-grid{grid-template-columns:1fr;grid-template-areas:'growth' 'starter' 'scale';gap:1.75rem;max-width:650px;margin-inline:auto}.plan-card{padding:2rem}.plan-label{min-height:0;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap}.plan-benefit,.plan-description{min-height:0}.plan-pricing{min-height:0}.plan-card h3{font-size:2.2rem}.plans-notes{grid-template-columns:1fr;gap:.75rem;max-width:650px;margin-inline:auto}.offers-v2 .section-head{display:block}.offers-v2 .section-head>p{margin-top:1.5rem;max-width:38rem}}
+@media(max-width:600px){.plan-card{padding:1.5rem}.plans-common{font-size:.9375rem}.offer-dialog{width:100%;max-width:100%;height:100dvh;max-height:100dvh;margin:0;border:0;scrollbar-gutter:auto}.offer-dialog-body{padding:1.5rem 1.25rem;padding-bottom:max(1.5rem,env(safe-area-inset-bottom))}.offer-dialog-header{padding:1rem 1.25rem}.plan-flow-list{grid-template-columns:1fr}.plan-next{padding:1.25rem}.plan-detail-intro .plan-pricing{padding:1rem}.offer-dialog .plan-price strong{font-size:2.3rem}}

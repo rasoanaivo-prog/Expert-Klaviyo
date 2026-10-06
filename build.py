@@ -4,6 +4,7 @@ from html import escape as e
 from urllib.parse import quote
 import re
 from media import media_sections
+from offers import offers_section
 
 ROOT = Path(__file__).resolve().parent
 BASE_PATH = '/Expert-Klaviyo'
@@ -46,14 +47,6 @@ CONTENT = {
    ['Lancer', 'Nous validons les emails. Je vérifie les parcours et les liens avant la mise en route.'],
    ['Optimiser', 'Pour le suivi continu, j’analyse les achats, les clics et la délivrabilité afin d’ajuster la suite.']
   ],
-  'offersTag': '05 / Accompagnement', 'offersTitle': 'Le bon départ.<br>La bonne suite.',
-  'offersIntro': 'Nous choisissons le périmètre selon votre situation, vos priorités et votre rythme de croissance.',
-  'offers': [
-   ['Starter', 'Poser les bases', 'Mission ponctuelle', 'Pour commencer par vos priorités email et avancer sur une première étape bien définie.', ['Un flow prioritaire ou une campagne ciblée', 'Copywriting, design et configuration', 'Un périmètre défini selon votre objectif']],
-   ['Growth', 'Construire l’ensemble', 'Mise en place complète', 'Pour donner une vraie structure à votre email marketing, du premier contact à l’après-achat.', ['Stratégie CRM et flows essentiels', 'Stratégie de campagnes et calendrier marketing', 'Copywriting, design et configuration des emails']],
-   ['Scale', 'Garder le rythme', 'Mise en place + suivi', 'Pour construire, suivre et faire évoluer votre email marketing avec un expert à vos côtés.', ['La base Growth et des campagnes régulières', 'Segmentation, création et envoi des campagnes', 'Suivi des performances et optimisation des flows']]
-  ],
-  'offerCta': 'Parlons de votre besoin', 'offerNote': 'Le nombre de flows, d’emails et de campagnes, la fréquence des envois, les délais et le tarif sont précisés dans votre proposition après l’audit gratuit.',
   'examplesTag': '06 / Témoignages clients', 'examplesTitle': 'La performance<br>se suit <span class="lime">ensemble.</span>',
   'examplesIntro': 'Les retours de mes clients sur les commandes, les flows et la qualité des envois.',
   'disclaimer': 'Retours clients partagés par Hari.',
@@ -70,7 +63,7 @@ CONTENT = {
    ['Klaviyo est déjà installé. Pouvez-vous reprendre l’existant ?', 'Oui. Je commence par examiner ce qui existe, ce qui fonctionne et ce qui mérite d’être corrigé. Nous priorisons ensuite les améliorations en fonction de votre situation.'],
    ['Que comprend l’audit gratuit de 30 minutes ?', 'Nous échangeons pendant 30 minutes sur votre boutique, vos flows, vos campagnes et votre délivrabilité pour identifier les priorités et les prochaines actions. Cet audit est gratuit et sans engagement. Une analyse approfondie du compte fait l’objet d’un périmètre séparé.'],
    ['Vous vous occupez aussi des textes et du design ?', 'Oui. Je travaille la stratégie, les textes, le design et la configuration. Les livrables exacts et les validations nécessaires sont précisés dans la proposition.'],
-   ['Gérez-vous aussi les campagnes marketing ?', 'Oui. Je prends en charge la stratégie, le calendrier marketing, la segmentation, le copywriting, le design et les envois. Starter peut couvrir une campagne ciblée, Growth prépare la stratégie et Scale inclut la gestion régulière des campagnes. Le volume est défini ensemble dans la proposition.'],
+   ['Gérez-vous aussi les campagnes marketing ?', 'Oui. Growth comprend une campagne par semaine, Scale deux à trois, et Scale renforcé quatre. Je prends en charge le calendrier marketing, la segmentation, le copywriting, le design et la programmation. Starter couvre uniquement la mise en place des flows et de la pop-up. Les grosses opérations commerciales, comme Black Friday, font l’objet d’un devis distinct.'],
    ['Quels résultats peut-on attendre ?', 'L’objectif est de mieux convertir et fidéliser. Les résultats dépendent notamment du trafic, de l’offre, de la base clients et de la situation de départ. Nous suivons les ventes attribuées, les clics et la qualité des envois, sans promettre un pourcentage universel.']
   ],
   'contactTag': 'La suite commence ici', 'contactTitle': 'Et si votre<br>prochaine vente<br>était <em>déjà là ?</em>',
@@ -110,14 +103,6 @@ CONTENT = {
    ['Launch', 'We approve the emails together. I check the customer journeys and links before going live.'],
    ['Improve', 'With ongoing support, I review purchases, clicks and deliverability to guide the next changes.']
   ],
-  'offersTag': '05 / Work with me', 'offersTitle': 'Start strong.<br>Keep moving.',
-  'offersIntro': 'We choose the right scope for where your store is today, your priorities and your pace of growth.',
-  'offers': [
-   ['Starter', 'Lay the foundations', 'One-time project', 'Focus on your email priorities and move forward with a clearly defined first step.', ['One priority flow or a targeted campaign', 'Copy, design and setup', 'A scope built around your goal']],
-   ['Growth', 'Build the whole picture', 'Complete setup', 'Give your email marketing a clear structure, from first contact to the post-purchase experience.', ['CRM strategy and core flows', 'Campaign strategy and marketing calendar', 'Email copy, design and setup']],
-   ['Scale', 'Keep the momentum', 'Setup + ongoing support', 'Build, track and improve your email marketing with a dedicated expert by your side.', ['The Growth foundation and ongoing campaigns', 'Campaign segmentation, creation and sending', 'Performance tracking and flow optimization']]
-  ],
-  'offerCta': 'Let’s discuss your needs', 'offerNote': 'The number of flows, emails and campaigns, sending frequency, timeline and pricing are detailed in your proposal after the free audit.',
   'examplesTag': '06 / Client testimonials', 'examplesTitle': 'Track progress.<br><span class="lime">Stay connected.</span>',
   'examplesIntro': 'Client feedback on orders, automated email sequences and sending quality.',
   'disclaimer': 'Client feedback shared by Hari.',
@@ -134,7 +119,7 @@ CONTENT = {
    ['Klaviyo is already installed. Can you improve what’s there?', 'Yes. I begin by reviewing what exists, what works and what needs attention. We then prioritise improvements based on your situation.'],
    ['What does the free 30-minute audit include?', 'We spend 30 minutes discussing your store, flows, campaigns and deliverability to identify priorities and practical next steps. The audit is free, with no obligation. An in-depth account review is scoped separately.'],
    ['Do you also handle copy and design?', 'Yes. I work on strategy, copy, design and setup. Your proposal specifies the exact deliverables and the approvals needed.'],
-   ['Do you also manage marketing campaigns?', 'Yes. I handle strategy, the marketing calendar, segmentation, copy, design and sending. Starter can cover a targeted campaign, Growth establishes the strategy, and Scale includes ongoing campaign management. We agree on the volume in your proposal.'],
+   ['Do you also manage marketing campaigns?', 'Yes. Growth includes one campaign per week, Scale two to three, and Scale Plus four. I handle the marketing calendar, segmentation, copy, design and scheduling. Starter covers flow and pop-up setup only. Major sales events such as Black Friday are quoted separately.'],
    ['What results can I expect?', 'The goal is to improve conversion and retention. Results depend on your traffic, offer, customer base and starting point. We track attributed sales, clicks and sending quality, without promising a universal percentage.']
   ],
   'contactTag': 'Your next step starts here', 'contactTitle': 'What if your<br>next sale was<br><em>already here?</em>',
@@ -168,9 +153,7 @@ def _page(lang):
  languages = ''.join(f'<a href="{url}" data-language="{lc}" lang="{lc}" hreflang="{lc}" aria-label="{label}"{(" aria-current=\"page\"" if lc==lang else "")}>{lc.upper()}</a>' for lc,url,label in [('fr','/','Français'),('en','/en/','English')])
  services = ''.join(f'<article class="service reveal"><span class="service-number">0{i}</span><h3>{title}</h3><div class="service-detail"><p>{e(text)}</p><small>{e(tag)}</small></div></article>' for i,(title,text,tag) in enumerate(c['services'],1))
  steps = ''.join(f'<article class="step reveal"><span class="step-index">0{i}</span><h3>{e(title)}</h3><p>{e(text)}</p></article>' for i,(title,text) in enumerate(c['steps'],1))
- offers = ''
- for i,(name,benefit,kind,text,items) in enumerate(c['offers']):
-  offers += f'<article class="offer {"featured" if i==1 else ""} reveal"><div class="offer-top"><span>{e(kind)}</span><span>0{i+1}</span></div><h3>{name}</h3><p><strong>{e(benefit)}</strong></p><p>{e(text)}</p><ul>{"".join(f"<li>{e(item)}</li>" for item in items)}</ul>{cta(c["offerCta"],"text-link")}</article>'
+ offers = offers_section(lang, PHONE)
  examples = ''
  templates = ''
  for i,(title,text,asset) in enumerate(c['examples']):
@@ -188,7 +171,7 @@ def _page(lang):
 <title>{e(c['title'])}</title><meta name="description" content="{e(c['description'],quote=True)}">
 <link rel="canonical" href="{ORIGIN}{base}"><link rel="alternate" hreflang="fr" href="{ORIGIN}/"><link rel="alternate" hreflang="en" href="{ORIGIN}/en/"><link rel="alternate" hreflang="x-default" href="{ORIGIN}/">
 <meta property="og:title" content="{e(c['title'],quote=True)}"><meta property="og:description" content="{e(c['description'],quote=True)}"><meta property="og:type" content="website"><meta property="og:url" content="{ORIGIN}{base}"><meta property="og:locale" content="{'fr_FR' if lang=='fr' else 'en_GB'}">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/media.css"><link rel="stylesheet" href="/assets/refresh.css"><link rel="preload" as="image" href="/assets/hari-banner.webp"><script src="/assets/app.js" defer></script></head>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/media.css"><link rel="stylesheet" href="/assets/refresh.css"><link rel="stylesheet" href="/assets/offers.css"><link rel="preload" as="image" href="/assets/hari-banner.webp"><script src="/assets/app.js" defer></script><script src="/assets/offers.js" defer></script></head>
 <body id="top"><a class="skip" href="#main">{c['skip']}</a>
 <header class="header"><div class="nav-inner wrap"><a class="brand" href="{base}" aria-label="{c['home']}">HARI<span> /</span></a><nav class="desktop-nav" aria-label="{'Navigation principale' if lang=='fr' else 'Main navigation'}">{nav}</nav><div class="nav-tools"><nav class="languages" aria-label="{'Langue' if lang=='fr' else 'Language'}">{languages}</nav>{cta(c['navcta'])}<button class="menu-toggle" aria-label="{c['menulabel']}" aria-expanded="false" aria-controls="mobile-nav">Menu <span aria-hidden="true">☰</span></button></div></div><nav class="mobile-nav" id="mobile-nav" hidden aria-label="{'Navigation mobile' if lang=='fr' else 'Mobile navigation'}">{nav}<a href="#contact">{c['navcta']}</a></nav></header>
 <main id="main">
@@ -198,7 +181,7 @@ def _page(lang):
 <section class="about section" id="about"><div class="about-grid wrap"><figure class="about-photo reveal"><img src="/assets/hari-about.webp" width="1368" height="1824" alt="{c['portrait']}" loading="lazy"><figcaption class="photo-tag">{c['photoTag']}</figcaption></figure><div class="about-copy reveal"><p class="eyebrow">{c['aboutTag']}</p><h2>{c['aboutTitle']}</h2><p class="lead">{c['aboutLead']}</p><p>{c['aboutText']}</p><p>{c['aboutText2']}</p><div class="facts">{facts}</div>{cta(c['aboutCta'],'text-link')}</div></div></section>
 <section class="method section" id="approach"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow lime">{c['methodTag']}</p><h2>{c['methodTitle']}</h2></div><p>{c['methodIntro']}</p></div><div class="method-layout"><div class="method-grid">{steps}</div><figure class="method-illustration reveal"><img src="/assets/email-method-illustration.webp" width="1200" height="900" alt="{'Illustration d’une enveloppe et de messages organisés pour la stratégie email' if lang=='fr' else 'Illustration of an envelope and organised messages for email strategy'}" loading="lazy"></figure></div></div></section>
 {gallery}
-<section class="offers section" id="offers"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow">{c['offersTag']}</p><h2>{c['offersTitle']}</h2></div><p>{c['offersIntro']}</p></div><div class="offer-grid">{offers}</div><p class="offer-note">{c['offerNote']}</p></div></section>
+{offers}
 <section class="examples section wrap" id="examples"><div class="section-head reveal"><div><p class="eyebrow lime">{c['examplesTag']}</p><h2>{c['examplesTitle']}</h2></div><p>{c['examplesIntro']}</p></div><div class="example-grid">{examples}</div></section>
 <section class="faq section wrap" id="faq"><div class="faq-grid"><div class="reveal"><p class="eyebrow lime">{c['faqTag']}</p><h2>{c['faqTitle']}</h2></div><div>{faqs}</div></div></section>
 <section class="contact section" id="contact"><div class="wrap contact-grid"><div class="reveal"><p class="eyebrow">{c['contactTag']}</p><h2>{c['contactTitle']}</h2></div><div class="contact-right"><img class="contact-illustration" src="/assets/contact-illustration.webp" width="1200" height="900" alt="{'Illustration de bulles de discussion et d’une enveloppe' if lang=='fr' else 'Illustration of chat bubbles and an envelope'}" loading="lazy"><p>{c['contactText']}</p>{cta(c['contactCta'],'button dark')}<a class="contact-number" href="https://wa.me/{PHONE}" target="_blank" rel="noopener noreferrer">WhatsApp · +261 38 80 507 81</a></div></div></section>

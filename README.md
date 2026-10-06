@@ -6,9 +6,9 @@ Site vitrine bilingue, en français (`/Expert-Klaviyo/`) et anglais (`/Expert-Kl
 
 ## Modifier le site
 
-- Textes et structure : `build.py` ; galerie des emails : `media.py`.
-- Styles : `assets/style.css`, `assets/fonts.css`, `assets/media.css`, `assets/refresh.css`.
-- Interactions : `assets/app.js`.
+- Textes et structure : `build.py` ; galerie des emails : `media.py` ; tarifs et détails des offres FR/EN : `offers.py`.
+- Styles : `assets/style.css`, `assets/fonts.css`, `assets/media.css`, `assets/refresh.css`, `assets/offers.css`.
+- Interactions : `assets/app.js` ; fiches détaillées des offres : `assets/offers.js`.
 - Régénérer les pages avec `python3 build.py`, puis publier les fichiers modifiés sur `main`.
 - Aucune installation de dépendances nécessaire. GitHub Pages sert directement les fichiers HTML générés.
 
