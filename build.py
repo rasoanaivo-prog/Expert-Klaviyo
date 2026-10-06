@@ -2,6 +2,7 @@
 from pathlib import Path
 from html import escape as e
 from urllib.parse import quote
+from hashlib import sha256
 import re
 from media import media_sections
 from offers import offers_section
@@ -143,6 +144,7 @@ TRANSCRIPTS = {
 
 def _page(lang):
  c = CONTENT[lang]
+ offers_version = sha256((ROOT / 'assets/offers.css').read_bytes() + (ROOT / 'assets/offers.js').read_bytes()).hexdigest()[:10]
  base = '/' if lang == 'fr' else '/en/'
  wa = 'https://wa.me/' + PHONE + '?text=' + quote(c['wa'])
  def cta(text, cls='button', url=wa):
@@ -171,7 +173,7 @@ def _page(lang):
 <title>{e(c['title'])}</title><meta name="description" content="{e(c['description'],quote=True)}">
 <link rel="canonical" href="{ORIGIN}{base}"><link rel="alternate" hreflang="fr" href="{ORIGIN}/"><link rel="alternate" hreflang="en" href="{ORIGIN}/en/"><link rel="alternate" hreflang="x-default" href="{ORIGIN}/">
 <meta property="og:title" content="{e(c['title'],quote=True)}"><meta property="og:description" content="{e(c['description'],quote=True)}"><meta property="og:type" content="website"><meta property="og:url" content="{ORIGIN}{base}"><meta property="og:locale" content="{'fr_FR' if lang=='fr' else 'en_GB'}">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/media.css"><link rel="stylesheet" href="/assets/refresh.css"><link rel="stylesheet" href="/assets/offers.css"><link rel="preload" as="image" href="/assets/hari-banner.webp"><script src="/assets/app.js" defer></script><script src="/assets/offers.js" defer></script></head>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/media.css"><link rel="stylesheet" href="/assets/refresh.css"><link rel="stylesheet" href="/assets/offers.css?v={offers_version}"><link rel="preload" as="image" href="/assets/hari-banner.webp"><script src="/assets/app.js" defer></script><script src="/assets/offers.js?v={offers_version}" defer></script></head>
 <body id="top"><a class="skip" href="#main">{c['skip']}</a>
 <header class="header"><div class="nav-inner wrap"><a class="brand" href="{base}" aria-label="{c['home']}">HARI<span> /</span></a><nav class="desktop-nav" aria-label="{'Navigation principale' if lang=='fr' else 'Main navigation'}">{nav}</nav><div class="nav-tools"><nav class="languages" aria-label="{'Langue' if lang=='fr' else 'Language'}">{languages}</nav>{cta(c['navcta'])}<button class="menu-toggle" aria-label="{c['menulabel']}" aria-expanded="false" aria-controls="mobile-nav">Menu <span aria-hidden="true">☰</span></button></div></div><nav class="mobile-nav" id="mobile-nav" hidden aria-label="{'Navigation mobile' if lang=='fr' else 'Mobile navigation'}">{nav}<a href="#contact">{c['navcta']}</a></nav></header>
 <main id="main">
