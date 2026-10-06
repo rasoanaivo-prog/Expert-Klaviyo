@@ -46,7 +46,7 @@ COPY = {
                 'cta': 'Voir Starter',
             },
             'growth': {
-                'benefit': 'Transformez vos emails en rendez-vous réguliers.',
+                'benefit': 'Faites revenir vos clients.',
                 'description': 'Pour développer vos ventes avec des flows solides, une campagne chaque semaine et un expert qui suit la performance.',
                 'items': ['6 flows · jusqu’à 16 emails', '1 campagne marketing par semaine', '1 pop-up et une segmentation adaptée', 'Bilan mensuel et suivi de délivrabilité', 'Optimisation des flows chaque mois'],
                 'cta': 'Découvrir Growth',
