@@ -8,7 +8,7 @@ Site vitrine bilingue, en français (`/`) et anglais (`/en/`), hébergé sur Git
 
 - Textes et structure : `build.py` ; galerie des emails : `media.py` ; tarifs et détails des offres FR/EN : `offers.py`.
 - Styles : `assets/style.css`, `assets/fonts.css`, `assets/media.css`, `assets/refresh.css`, `assets/offers.css`.
-- Interactions : `assets/app.js` ; fiches détaillées des offres : `assets/offers.js`.
+- Interactions : `assets/app.js` ; fiches détaillées des offres : `assets/offers.js` ; réservation Calendly : `assets/booking.js`.
 - Régénérer les pages avec `python3 build.py`, puis publier les fichiers modifiés sur `main`.
 - Aucune installation de dépendances nécessaire. GitHub Pages sert directement les fichiers HTML générés.
 
@@ -22,4 +22,8 @@ Sora pour les titres et DM Sans pour les textes, auto-hébergées avec leurs lic
 
 Le site utilise le domaine personnalisé `harishift.com` via GitHub Pages. Le fichier `CNAME` contient `harishift.com`, et les liens, images et métadonnées utilisent la racine du domaine. Le fichier `.nojekyll` indique que le site est statique et ne nécessite pas Jekyll. L’ancienne adresse `hari-klaviyo-expert.html` redirige vers l’accueil.
 
-Le site n’utilise aucun outil de suivi ni formulaire externe. Les boutons WhatsApp ouvrent un message prérempli sans l’envoyer automatiquement.
+Les coordonnées sont définies dans `build.py` : `BOOKING_URL` pour l’audit gratuit de 30 minutes, `EMAIL` pour l’adresse professionnelle et `PHONE` pour WhatsApp.
+
+Les boutons d’audit ouvrent le widget officiel Calendly en pop-up, y compris dans le menu mobile et les fiches des offres. Le lien direct reste disponible si le script externe est bloqué ou pas encore chargé. Une fiche d’offre est fermée avant d’ouvrir Calendly pour éviter la superposition des fenêtres. La réservation et les disponibilités sont gérées dans Calendly ; aucun rendez-vous n’est créé au simple clic sur le bouton.
+
+L’adresse `hello@harishift.com` est un lien `mailto:` dans Contact. Les boutons de discussion sur les offres restent sur WhatsApp et ouvrent un message prérempli sans l’envoyer automatiquement. Le site ne charge aucun outil d’analyse d’audience ; Calendly est un service externe de réservation avec ses propres cookies et informations de confidentialité.

@@ -11,6 +11,8 @@ ROOT = Path(__file__).resolve().parent
 BASE_PATH = ''
 ORIGIN = 'https://harishift.com'
 PHONE = '261388050781'
+EMAIL = 'hello@harishift.com'
+BOOKING_URL = 'https://calendly.com/hello-harishift/30min'
 ARROW = '<span class="arrow" aria-hidden="true">↗</span>'
 
 CONTENT = {
@@ -20,7 +22,7 @@ CONTENT = {
   'skip': 'Aller au contenu', 'home': 'Accueil Hari', 'nav': ['Votre croissance', 'À propos', 'La méthode', 'Offres & tarifs'],
   'viewOffers': 'Voir les offres',
   'navcta': 'Audit gratuit · 30 min', 'menulabel': 'Ouvrir ou fermer le menu', 'audit': 'Réserver mon audit gratuit',
-  'wa': 'Bonjour Hari, je souhaite réserver mon audit Klaviyo gratuit de 30 minutes. Voici le lien de ma boutique : ',
+  'wa': 'Bonjour Hari, je souhaite échanger avec vous au sujet de ma boutique et de vos offres Klaviyo. Voici le lien de ma boutique : ',
   'eyebrow': 'Expert Klaviyo indépendant · Shopify',
   'hero': '<span>Votre trafic.</span><span>Plus de <em>ventes.</em></span>',
   'intro': 'Vous attirez les visiteurs. Je crée les flows et les campagnes email qui les aident à passer commande, puis leur donnent envie de revenir.',
@@ -82,7 +84,7 @@ CONTENT = {
   'skip': 'Skip to content', 'home': 'Hari home', 'nav': ['Your growth', 'About me', 'The approach', 'Plans & pricing'],
   'viewOffers': 'View plans',
   'navcta': 'Free audit · 30 min', 'menulabel': 'Open or close the menu', 'audit': 'Book my free audit',
-  'wa': 'Hi Hari, I would like to book a free 30-minute Klaviyo audit. Here is my store link: ',
+  'wa': 'Hi Hari, I’d like to discuss my store and your Klaviyo services. Here is my store link: ',
   'eyebrow': 'Independent Klaviyo expert · Shopify',
   'hero': '<span>Your traffic.</span><span>More <em>sales.</em></span>',
   'intro': 'You bring the visitors. I create the flows and email campaigns that help them place an order, then give them a reason to come back.',
@@ -156,10 +158,12 @@ def _page(lang):
  c = CONTENT[lang]
  offers_version = sha256((ROOT / 'assets/offers.css').read_bytes() + (ROOT / 'assets/offers.js').read_bytes()).hexdigest()[:10]
  ui_version = sha256(b''.join((ROOT / ('assets/' + file)).read_bytes() for file in ('style.css', 'media.css', 'refresh.css', 'app.js'))).hexdigest()[:10]
+ booking_version = sha256((ROOT / 'assets/booking.js').read_bytes()).hexdigest()[:10]
  base = '/' if lang == 'fr' else '/en/'
  wa = 'https://wa.me/' + PHONE + '?text=' + quote(c['wa'])
- def cta(text, cls='button', url=wa):
-  return f'<a class="{cls}" href="{e(url,quote=True)}" target="_blank" rel="noopener noreferrer">{e(text)}{ARROW}</a>'
+ def cta(text, cls='button', url=BOOKING_URL):
+  booking = ' data-calendly aria-haspopup="dialog"' if url == BOOKING_URL else ''
+  return f'<a class="{cls}" href="{e(url,quote=True)}" target="_blank" rel="noopener noreferrer"{booking}>{e(text)}{ARROW}</a>'
  ids = ['growth','offers','designs','examples','about']
  nav_labels = [c['nav'][0], c['nav'][3], 'Emails', 'Témoignages' if lang=='fr' else 'Testimonials', c['nav'][1]]
  nav = ''.join(f'<a href="#{i}">{e(t)}</a>' for i,t in zip(ids,nav_labels))
@@ -168,7 +172,7 @@ def _page(lang):
  services = ''.join(f'<article class="growth-service reveal"><p class="growth-service-label">{e(c["serviceLabels"][i])}</p><h3>{title}</h3><p class="growth-service-description">{e(text)}</p><ul class="growth-flow-tags">{"".join(f"<li>{e(flow)}</li>" for flow in flow_groups[i])}</ul><p class="growth-service-scope">{e(tag)}</p></article>' for i,(title,text,tag) in enumerate(c['services']))
  proof_teaser = f'<figure class="growth-proof"><div><blockquote>« {e(c["proofQuote"])} »</blockquote><figcaption>{e(c["proofCaption"])}</figcaption></div><button class="text-link" type="button" data-proof="/assets/example-1.jpg" data-proof-alt="{e(c["examples"][2][0],quote=True)}" data-transcript="#transcript-2">{e(c["proofCta"])}{ARROW}</button></figure>'
  steps = ''.join(f'<article class="step reveal"><span class="step-index">0{i}</span><h3>{e(title)}</h3><p>{e(text)}</p></article>' for i,(title,text) in enumerate(c['steps'],1))
- offers = offers_section(lang, PHONE)
+ offers = offers_section(lang, PHONE, BOOKING_URL)
  examples = ''
  templates = ''
  for i,(title,text,asset) in enumerate(c['examples']):
@@ -186,9 +190,9 @@ def _page(lang):
 <title>{e(c['title'])}</title><meta name="description" content="{e(c['description'],quote=True)}">
 <link rel="canonical" href="{ORIGIN}{base}"><link rel="alternate" hreflang="fr" href="{ORIGIN}/"><link rel="alternate" hreflang="en" href="{ORIGIN}/en/"><link rel="alternate" hreflang="x-default" href="{ORIGIN}/">
 <meta property="og:title" content="{e(c['title'],quote=True)}"><meta property="og:description" content="{e(c['description'],quote=True)}"><meta property="og:type" content="website"><meta property="og:url" content="{ORIGIN}{base}"><meta property="og:locale" content="{'fr_FR' if lang=='fr' else 'en_US'}">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v={ui_version}"><link rel="stylesheet" href="/assets/media.css?v={ui_version}"><link rel="stylesheet" href="/assets/refresh.css?v={ui_version}"><link rel="stylesheet" href="/assets/offers.css?v={offers_version}"><link rel="preload" as="image" href="/assets/hari-banner.webp"><script src="/assets/app.js?v={ui_version}" defer></script><script src="/assets/offers.js?v={offers_version}" defer></script></head>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v={ui_version}"><link rel="stylesheet" href="/assets/media.css?v={ui_version}"><link rel="stylesheet" href="/assets/refresh.css?v={ui_version}"><link rel="stylesheet" href="/assets/offers.css?v={offers_version}"><link rel="preload" as="image" href="/assets/hari-banner.webp"><script src="/assets/app.js?v={ui_version}" defer></script><script src="/assets/offers.js?v={offers_version}" defer></script><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css"><script src="https://assets.calendly.com/assets/external/widget.js" async></script><script src="/assets/booking.js?v={booking_version}" defer></script></head>
 <body id="top"><a class="skip" href="#main">{c['skip']}</a>
-<header class="header"><div class="nav-inner wrap"><a class="brand" href="{base}" aria-label="{c['home']}">HARI<span> /</span></a><nav class="desktop-nav" aria-label="{'Navigation principale' if lang=='fr' else 'Main navigation'}">{nav}</nav><div class="nav-tools"><nav class="languages" aria-label="{'Langue' if lang=='fr' else 'Language'}">{languages}</nav>{cta(c['navcta'])}<button class="menu-toggle" aria-label="{c['menulabel']}" aria-expanded="false" aria-controls="mobile-nav">Menu <span aria-hidden="true">☰</span></button></div></div><nav class="mobile-nav" id="mobile-nav" hidden aria-label="{'Navigation mobile' if lang=='fr' else 'Mobile navigation'}">{nav}<a href="#contact">{c['navcta']}</a></nav></header>
+<header class="header"><div class="nav-inner wrap"><a class="brand" href="{base}" aria-label="{c['home']}">HARI<span> /</span></a><nav class="desktop-nav" aria-label="{'Navigation principale' if lang=='fr' else 'Main navigation'}">{nav}</nav><div class="nav-tools"><nav class="languages" aria-label="{'Langue' if lang=='fr' else 'Language'}">{languages}</nav>{cta(c['navcta'])}<button class="menu-toggle" aria-label="{c['menulabel']}" aria-expanded="false" aria-controls="mobile-nav">Menu <span aria-hidden="true">☰</span></button></div></div><nav class="mobile-nav" id="mobile-nav" hidden aria-label="{'Navigation mobile' if lang=='fr' else 'Mobile navigation'}">{nav}{cta(c['navcta'])}</nav></header>
 <main id="main">
 <section class="hero"><div class="hero-lead wrap"><div><p class="eyebrow lime">{c['eyebrow']}</p><h1>{c['hero']}</h1></div><div class="hero-summary"><p class="hero-description">{c['intro']}</p><div class="hero-actions">{cta(c['audit'])}<a class="button button-outline" href="#offers">{e(c['viewOffers'])}</a></div><p class="hero-note">{c['note']}</p></div></div><figure class="hero-banner"><img src="/assets/hari-banner.webp" width="1672" height="941" alt="{'Hari entouré de tableaux de bord Klaviyo en hologrammes bleus' if lang=='fr' else 'Hari surrounded by blue holographic Klaviyo dashboards'}" fetchpriority="high"></figure><div class="hero-bottom wrap"><span>{c['bottom'][0]}</span><span>{c['bottom'][1]}</span></div></section>
 <div class="band">{('<i aria-hidden="true">✳</i>').join(f'<span>{e(s)}</span>' for s in c['band'])}</div>
@@ -197,9 +201,9 @@ def _page(lang):
 {gallery}
 <section class="examples section wrap" id="examples"><div class="section-head reveal"><div><p class="eyebrow lime">{c['examplesTag']}</p><h2>{c['examplesTitle']}</h2></div><p>{c['examplesIntro']}</p></div><div class="example-grid">{examples}</div></section>
 <section class="method section" id="approach"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow lime">{c['methodTag']}</p><h2>{c['methodTitle']}</h2></div><p>{c['methodIntro']}</p></div><div class="method-layout"><div class="method-grid">{steps}</div><figure class="method-illustration reveal"><img src="/assets/email-method-illustration.webp" width="1200" height="900" alt="{'Illustration d’une enveloppe et de messages organisés pour la stratégie email' if lang=='fr' else 'Illustration of an envelope and organised messages for email strategy'}" loading="lazy"></figure></div></div></section>
-<section class="about section" id="about"><div class="about-grid wrap"><figure class="about-photo reveal"><img src="/assets/hari-about.webp" width="1368" height="1824" alt="{c['portrait']}" loading="lazy"><figcaption class="photo-tag">{c['photoTag']}</figcaption></figure><div class="about-copy reveal"><p class="eyebrow">{c['aboutTag']}</p><h2>{c['aboutTitle']}</h2><p class="lead">{c['aboutLead']}</p><p>{c['aboutText']}</p><p>{c['aboutText2']}</p><div class="facts">{facts}</div>{cta(c['aboutCta'],'text-link')}</div></div></section>
+<section class="about section" id="about"><div class="about-grid wrap"><figure class="about-photo reveal"><img src="/assets/hari-about.webp" width="1368" height="1824" alt="{c['portrait']}" loading="lazy"><figcaption class="photo-tag">{c['photoTag']}</figcaption></figure><div class="about-copy reveal"><p class="eyebrow">{c['aboutTag']}</p><h2>{c['aboutTitle']}</h2><p class="lead">{c['aboutLead']}</p><p>{c['aboutText']}</p><p>{c['aboutText2']}</p><div class="facts">{facts}</div>{cta(c['aboutCta'],'text-link',wa)}</div></div></section>
 <section class="faq section wrap" id="faq"><div class="faq-grid"><div class="reveal"><p class="eyebrow lime">{c['faqTag']}</p><h2>{c['faqTitle']}</h2></div><div>{faqs}</div></div></section>
-<section class="contact section" id="contact"><div class="wrap contact-grid"><div class="reveal"><p class="eyebrow">{c['contactTag']}</p><h2>{c['contactTitle']}</h2></div><div class="contact-right"><img class="contact-illustration" src="/assets/contact-illustration.webp" width="1200" height="900" alt="{'Illustration de bulles de discussion et d’une enveloppe' if lang=='fr' else 'Illustration of chat bubbles and an envelope'}" loading="lazy"><p>{c['contactText']}</p>{cta(c['contactCta'],'button dark')}<a class="contact-number" href="https://wa.me/{PHONE}" target="_blank" rel="noopener noreferrer">WhatsApp · +261 38 80 507 81</a></div></div></section>
+<section class="contact section" id="contact"><div class="wrap contact-grid"><div class="reveal"><p class="eyebrow">{c['contactTag']}</p><h2>{c['contactTitle']}</h2></div><div class="contact-right"><img class="contact-illustration" src="/assets/contact-illustration.webp" width="1200" height="900" alt="{'Illustration de bulles de discussion et d’une enveloppe' if lang=='fr' else 'Illustration of chat bubbles and an envelope'}" loading="lazy"><p>{c['contactText']}</p>{cta(c['contactCta'],'button dark')}<a class="contact-number" href="https://wa.me/{PHONE}" target="_blank" rel="noopener noreferrer">WhatsApp · +261 38 80 507 81</a><a class="contact-email" href="mailto:{e(EMAIL,quote=True)}">{e(EMAIL)}</a></div></div></section>
 </main><footer class="footer wrap"><div class="footer-top"><a class="brand" href="#top" aria-label="{c['home']}">HARI<span> /</span></a><p>{c['footerLine']}</p></div><div class="footer-bottom"><span>{c['footerCopyright']}</span><a href="#top">{c['back']} ↑</a></div></footer>
 <dialog class="proof-dialog" id="proof-dialog" aria-labelledby="dialog-label"><div class="dialog-header"><p id="dialog-label">{c['demo']}</p><button class="dialog-close" autofocus>{c['close']} ×</button></div><div class="dialog-body"><img alt=""><div class="transcript"></div></div></dialog>{templates}
 </body></html>'''

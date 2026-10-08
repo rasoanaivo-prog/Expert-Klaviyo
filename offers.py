@@ -37,7 +37,6 @@ COPY = {
         'starterNote': 'Cette mission ponctuelle couvre la mise en place des flows et de la pop-up. Les campagnes, le suivi, les audits récurrents et les optimisations avec A/B tests sont inclus uniquement dans Growth et Scale.',
         'cap': 'Jusqu’à {count} emails automatisés au total. Le nombre de messages de chaque flow est adapté à votre parcours client.',
         'wa': 'Bonjour Hari, l’offre {name} m’intéresse. Je souhaite en discuter avec vous. Voici le lien de ma boutique : ',
-        'waAudit': 'Bonjour Hari, je souhaite un audit gratuit de 30 minutes pour savoir si l’offre {name} convient à ma boutique. Voici son lien : ',
         'plans': {
             'starter': {
                 'benefit': 'Activez vos premières relances.',
@@ -90,7 +89,6 @@ COPY = {
         'starterNote': 'This one-time project covers flow and pop-up setup. Campaigns, ongoing support, regular audits and optimization with A/B testing are included only in Growth and Scale.',
         'cap': 'Up to {count} automated emails in total. The number of messages in each flow is tailored to your customer journey.',
         'wa': 'Hi Hari, I’m interested in {name} and would like to discuss the plan. Here is my store link: ',
-        'waAudit': 'Hi Hari, I would like a free 30-minute audit to see whether {name} is right for my store. Here is my store link: ',
         'plans': {
             'starter': {
                 'benefit': 'Get your first follow-ups running.',
@@ -138,14 +136,14 @@ def campaigns_faq(lang):
     return f'Yes. Growth includes {growth} campaigns per week, Scale {scale}, and Scale Plus {plus}. I handle the marketing calendar, segmentation, copy, design and scheduling. Starter covers flow and pop-up setup only. Major sales events such as Black Friday are quoted separately.'
 
 
-def offers_section(lang, phone):
+def offers_section(lang, phone, booking_url):
     c = COPY[lang]
 
     def name(key):
         return c['plans'][key].get('name', PLANS[key]['name'])
 
-    def whatsapp(key, audit=False):
-        return 'https://wa.me/' + phone + '?text=' + quote(c['waAudit' if audit else 'wa'].format(name=name(key)))
+    def whatsapp(key):
+        return 'https://wa.me/' + phone + '?text=' + quote(c['wa'].format(name=name(key)))
 
     def price(key):
         plan = PLANS[key]
@@ -188,7 +186,7 @@ def offers_section(lang, phone):
 <section class="plan-detail-section"><h3>{escape(c['setupTitle'])}</h3>{bullet_list(c['setupItems'])}</section>
 {monthly}
 <section class="plan-detail-section"><h3>{escape(c['scopeTitle'])}</h3>{bullet_list(c['scopeItems'])}<p>{escape(extra_note)}</p></section>
-<div class="plan-next"><h3>{escape(c['nextTitle'])}</h3><p>{escape(c['nextText'])}</p><a class="plan-button plan-button-primary" href="{escape(whatsapp(key), quote=True)}" target="_blank" rel="noopener noreferrer">{escape(c['contact'].format(name=name(key)))}</a><a class="plan-audit-link" href="{escape(whatsapp(key, True), quote=True)}" target="_blank" rel="noopener noreferrer">{escape(c['audit'])}</a></div>
+<div class="plan-next"><h3>{escape(c['nextTitle'])}</h3><p>{escape(c['nextText'])}</p><a class="plan-button plan-button-primary" href="{escape(whatsapp(key), quote=True)}" target="_blank" rel="noopener noreferrer">{escape(c['contact'].format(name=name(key)))}</a><a class="plan-audit-link" href="{escape(booking_url, quote=True)}" target="_blank" rel="noopener noreferrer" data-calendly aria-haspopup="dialog">{escape(c['audit'])}</a></div>
 </div></dialog>''')
 
     return f'''<section class="offers offers-v2 section" id="offers"><div class="wrap">

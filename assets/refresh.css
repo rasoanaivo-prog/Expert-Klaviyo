@@ -16,6 +16,9 @@ h2{font-size:clamp(2rem,4vw,4.2rem)}h3{font-size:clamp(1.3rem,2vw,2.15rem);line-
 .contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(2rem,5vw,6rem);align-items:center}.contact h2{font-size:clamp(2.6rem,4.8vw,5rem);line-height:1.12;letter-spacing:-.05em}.contact h2 em{font-style:normal}.contact-right{max-width:30rem;justify-self:end}.contact-illustration{width:100%;aspect-ratio:4/3;height:auto;object-fit:contain;object-position:center;margin-bottom:1.5rem}.contact-right p{font-size:1rem}.contact .button{gap:1rem}
 .transcript h3{font-size:1.35rem;line-height:1.35}.dialog-close{flex:none}.footer-top .brand{font-size:2rem}
 .hero-actions{display:flex;align-items:stretch;flex-wrap:wrap;gap:.8rem}
+.contact-email{display:inline-block;padding:.5rem 0;font-size:.9375rem;overflow-wrap:anywhere}
+.contact-email:hover{text-decoration:underline}
+body:has(.calendly-overlay){overflow:hidden}
 .hero-actions .button-outline{background:transparent;border-color:#727b66;color:var(--paper)}
 .hero-actions .button-outline:hover{background:#30362a;border-color:var(--lime)}
 .growth-services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
