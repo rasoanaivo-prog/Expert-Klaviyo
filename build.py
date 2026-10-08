@@ -8,8 +8,8 @@ from media import media_sections
 from offers import FLOWS, PLANS, campaigns_faq, offers_section
 
 ROOT = Path(__file__).resolve().parent
-BASE_PATH = '/Expert-Klaviyo'
-ORIGIN = 'https://rasoanaivo-prog.github.io' + BASE_PATH
+BASE_PATH = ''
+ORIGIN = 'https://harishift.com'
 PHONE = '261388050781'
 ARROW = '<span class="arrow" aria-hidden="true">↗</span>'
 
@@ -205,7 +205,7 @@ def _page(lang):
 </body></html>'''
 
 def page(lang):
- # Keep local links inside the GitHub Pages project on both language pages.
+ # Keep local links rooted at the custom domain on both language pages.
  return re.sub(r'''(\b(?:href|src|data-proof)=["'])/(?!/)''',
                lambda match: match.group(1) + BASE_PATH + '/', _page(lang))
 
