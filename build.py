@@ -25,6 +25,8 @@ CONTENT = {
   'wa': 'Bonjour Hari, je souhaite échanger avec vous au sujet de ma boutique et de vos offres Klaviyo. Voici le lien de ma boutique : ',
   'eyebrow': 'Expert Klaviyo indépendant · Shopify',
   'hero': '<span>Votre trafic.</span><span>Plus de <em>ventes.</em></span>',
+  'experienceStores': 'boutiques Shopify accompagnées',
+  'experienceContext': 'Expérience acquise en agence',
   'intro': 'Vous attirez les visiteurs. Je crée les flows et les campagnes email qui les aident à passer commande, puis leur donnent envie de revenir.',
   'note': '30 minutes offertes pour identifier vos priorités. Directement avec moi, sans engagement.',
   'role': 'Votre expert email marketing', 'portrait': 'Portrait professionnel de Hari',
@@ -87,6 +89,8 @@ CONTENT = {
   'wa': 'Hi Hari, I’d like to discuss my store and your Klaviyo services. Here is my store link: ',
   'eyebrow': 'Independent Klaviyo expert · Shopify',
   'hero': '<span>Your traffic.</span><span>More <em>sales.</em></span>',
+  'experienceStores': 'Shopify stores supported',
+  'experienceContext': 'Experience gained in an agency',
   'intro': 'You bring the visitors. I create the flows and email campaigns that help them place an order, then give them a reason to come back.',
   'note': '30 minutes to identify your priorities. Directly with me, with no obligation.', 'role': 'Your email marketing expert', 'portrait': 'Professional portrait of Hari',
   'bottom': ['Based in Madagascar · Working worldwide', 'Strategy. Creative. Optimization.'],
@@ -194,7 +198,7 @@ def _page(lang):
 <body id="top"><a class="skip" href="#main">{c['skip']}</a>
 <header class="header"><div class="nav-inner wrap"><a class="brand" href="{base}" aria-label="{c['home']}">HARI<span> /</span></a><nav class="desktop-nav" aria-label="{'Navigation principale' if lang=='fr' else 'Main navigation'}">{nav}</nav><div class="nav-tools"><nav class="languages" aria-label="{'Langue' if lang=='fr' else 'Language'}">{languages}</nav>{cta(c['navcta'])}<button class="menu-toggle" aria-label="{c['menulabel']}" aria-expanded="false" aria-controls="mobile-nav">Menu <span aria-hidden="true">☰</span></button></div></div><nav class="mobile-nav" id="mobile-nav" hidden aria-label="{'Navigation mobile' if lang=='fr' else 'Mobile navigation'}">{nav}{cta(c['navcta'])}</nav></header>
 <main id="main">
-<section class="hero"><div class="hero-lead wrap"><div><p class="eyebrow lime">{c['eyebrow']}</p><h1>{c['hero']}</h1></div><div class="hero-summary"><p class="hero-description">{c['intro']}</p><div class="hero-actions">{cta(c['audit'])}<a class="button button-outline" href="#offers">{e(c['viewOffers'])}</a></div><p class="hero-note">{c['note']}</p></div></div><figure class="hero-banner"><img src="/assets/hari-banner.webp" width="1672" height="941" alt="{'Hari entouré de tableaux de bord Klaviyo en hologrammes bleus' if lang=='fr' else 'Hari surrounded by blue holographic Klaviyo dashboards'}" fetchpriority="high"></figure><div class="hero-bottom wrap"><span>{c['bottom'][0]}</span><span>{c['bottom'][1]}</span></div></section>
+<section class="hero"><div class="hero-lead wrap"><div><p class="eyebrow lime">{c['eyebrow']}</p><h1>{c['hero']}</h1><div class="hero-experience"><p class="hero-experience-main"><strong>50+</strong> {e(c['experienceStores'])}</p><p class="hero-experience-context">{e(c['experienceContext'])}</p></div></div><div class="hero-summary"><p class="hero-description">{c['intro']}</p><div class="hero-actions">{cta(c['audit'])}<a class="button button-outline" href="#offers">{e(c['viewOffers'])}</a></div><p class="hero-note">{c['note']}</p></div></div><figure class="hero-banner"><img src="/assets/hari-banner.webp" width="1672" height="941" alt="{'Hari entouré de tableaux de bord Klaviyo en hologrammes bleus' if lang=='fr' else 'Hari surrounded by blue holographic Klaviyo dashboards'}" fetchpriority="high"></figure><div class="hero-bottom wrap"><span>{c['bottom'][0]}</span><span>{c['bottom'][1]}</span></div></section>
 <div class="band">{('<i aria-hidden="true">✳</i>').join(f'<span>{e(s)}</span>' for s in c['band'])}</div>
 <section class="impact section wrap" id="growth"><div class="section-head reveal"><div><p class="eyebrow lime">{c['impactTag']}</p><h2>{c['impactTitle']}</h2></div><p>{c['impactIntro']}</p></div><div class="growth-services">{services}</div>{proof_teaser}</section>
 {offers}

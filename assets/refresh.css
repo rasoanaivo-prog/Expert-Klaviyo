@@ -6,6 +6,10 @@ h2{font-size:clamp(2rem,4vw,4.2rem)}h3{font-size:clamp(1.3rem,2vw,2.15rem);line-
 .eyebrow{font-family:var(--body);font-size:.875rem;letter-spacing:.08em}.desktop-nav{gap:1.5rem}.nav-inner{gap:1.5rem}
 .hero-lead{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(2rem,5vw,6rem);align-items:center;padding-block:clamp(2.5rem,4vw,4.5rem)}
 .hero h1{font-family:var(--display);font-size:clamp(2.8rem,5vw,5.2rem);line-height:1.12;letter-spacing:-.06em;margin-top:1.25rem;font-weight:600}
+.hero-experience{width:fit-content;max-width:100%;margin-top:1.5rem;padding:.8rem 1.1rem;border-left:3px solid var(--lime);background:rgba(208,248,68,.05)}
+.hero-experience-main{font-size:1.0625rem;line-height:1.5;font-weight:600;color:var(--paper)}
+.hero-experience-main strong{font-family:var(--display);font-size:1.4rem;font-weight:600;color:var(--lime)}
+.hero-experience-context{margin-top:.15rem;font-size:.875rem;line-height:1.5;color:#bfc7b5}
 .hero h1 em{font-style:normal}.hero-description{margin-top:0;font-size:1.0625rem;max-width:35rem}.hero-actions{margin-top:1.4rem}.hero-note{margin-top:.7rem}
 .hero-banner{width:100%;aspect-ratio:16/9;background:#0b1823;overflow:hidden;margin:0}.hero-banner img{width:100%;height:100%;object-fit:contain;object-position:center;filter:none}
 .hero-bottom{padding-block:1.2rem}.band{font-family:var(--display);font-size:clamp(1rem,1.4vw,1.45rem);font-weight:500;line-height:1.4;letter-spacing:-.025em}
